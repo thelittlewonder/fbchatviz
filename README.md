@@ -36,3 +36,24 @@ Getting Started
     $ git clone https://github.com/thelittlewonder/fbchatviz.git
     $ pip install -r requirements.txt
     $ python plot.py message_1.json
+    
+Plots
+------------
+#### Messages per Day
+![Messages per Day](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Day-Wise-Comparison.png)
+
+
+#### Messages per Month
+![Messages per Month](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Month-Wise-Comparison.png)
+
+#### Messages per Year
+![Messages per Year](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Year-Wise-Comparison.png)
+
+#### Messages over Time
+![Messages over Time](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Frequency-of-Messages-over-time.png)
+
+#### Types of Messages
+![Types of Messages](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Types-of-Messages.png)
+
+#### Common Words
+![Common Words](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Common-Words.png)
