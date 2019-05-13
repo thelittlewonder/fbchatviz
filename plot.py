@@ -309,7 +309,7 @@ a = list(dict(sorted(dict(Counter(total_words['total'])).items(), key=lambda x: 
 seperator = ' '
 sentence = (seperator.join(a))
 
-fb_mask = np.array(Image.open("fb-mask.png"))
+fb_mask = np.array(Image.open("images/fb-mask.png"))
 
 wc = WordCloud(background_color="white", mask=fb_mask,
                contour_width=3, contour_color='steelblue')
