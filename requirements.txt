@@ -1,0 +1,4 @@
+plotly==3.9.0
+wordcloud==1.5.0
+numpy==1.14.3
+Pillow==5.1.0
