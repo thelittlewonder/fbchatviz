@@ -8,7 +8,7 @@ import plotly.graph_objs as go
 import plotly.io as pio
 from wordcloud import WordCloud
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 #give error if no argument given
 if len(sys.argv) < 2:
@@ -40,7 +40,6 @@ messages_days = {}
 messages_years = {}
 messages_months = {}
 total_words = {}
-
 
 #classify messages as received or sent
 for message in messages_data:
@@ -320,5 +319,51 @@ wc.generate(sentence)
 #save word cloud
 wc.to_file(save_path+'/Common-Words.png')
 
+#create combined image
+# create background image object with the input image
+combined_image = Image.open('./images/base.png')
+ 
+# initialise the drawing context with the combined image object as background
+drawing_context = ImageDraw.Draw(combined_image)
+
+# create font object with the font file and specify
+font_h1 = ImageFont.truetype('./fonts/SourceSansPro-Regular.ttf', size=32)
+font_h2 = ImageFont.truetype('./fonts/SourceSansPro-Bold.ttf', size=40)
+font_h3 = ImageFont.truetype('./fonts/SourceSansPro-Regular.ttf', size=24)
+
+#define colors
+h1_color = 'rgb(51, 51, 51)'
+blue_color = 'rgb(59, 89, 152)'
+pink_color = 'rgb(239, 86, 117)'
+h3_color = 'rgb(102, 102, 102)'
+
+##title
+drawing_context.text((50, 50), 'Your Facebook Chat Numbers with', fill=h1_color, font=font_h1)
+drawing_context.text((50, 98), sender, fill=blue_color, font=font_h2)
+
+##stats heading
+drawing_context.text((50, 210), 'Total Messages', fill=h3_color, font=font_h3)
+drawing_context.text((307, 210), 'Messages Sent', fill=h3_color, font=font_h3)
+drawing_context.text((560, 210), 'Messages Received', fill=h3_color, font=font_h3)
+
+##stats
+drawing_context.text((50, 252), str(len(messages_data)), fill=h1_color, font=font_h2)
+drawing_context.text((307, 252), str(len(messages_sent)), fill=blue_color, font=font_h2)
+drawing_context.text((560, 252), str(len(messages_received)), fill=pink_color, font=font_h2)
+
+##open and paste other plots
+year_wise = Image.open(save_path+'/Year-Wise-Comparison.png')
+month_wise = Image.open(save_path+'/Month-Wise-Comparison.png')
+day_wise = Image.open(save_path+'/Day-Wise-Comparison.png')
+time_wise = Image.open(save_path+'/Frequency-of-Messages-over-time.png')
+type_wise = Image.open(save_path+'/Types-of-Messages.png')
+combined_image.paste(year_wise,(50,366))
+combined_image.paste(month_wise,(50,922))
+combined_image.paste(day_wise,(50,1478))
+combined_image.paste(time_wise,(50,2034))
+combined_image.paste(type_wise,(50,2590))
+
+combined_image.save(save_path+'/_Summary_.png',optimize=True)
+combined_image.show
 #print success message
-print('Saved charts to Plots')
+print('Charts saved to Plots/' + sender)
