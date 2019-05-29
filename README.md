@@ -17,7 +17,8 @@ For other Linux flavors, macOS and Windows, packages are available at
 
 Getting Started
 ------------
-### Download Facebook Data 
+### Getting the Facebook Data
+------------
 - Download your Facebook Messaging Data by heading to [settings](https://www.facebook.com/settings?tab=your_facebook_information)
 - Click Download your information.
 ![Download info](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Readme_1.png)
@@ -26,13 +27,16 @@ Getting Started
 - Click create file.
 - You will receive a notification as well as an email when your data is ready. It normally takes 15-20 minutes to combine the data.
 ![Notification](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Readme_3.png)
+
+### Getting Your Messages
+------------
 - Once you have downloaded the data file, extract the folder and Navigate to Messages > Inbox.
 - Here you can see the individual folders for each of your chat.
 - Open any of chat folder and copy the **message_1.json** file.
 - **message_1.json** is the data file we will be using to plot the charts. Place it in the fbchatviz folder. 
 
 ### Running the Script
-
+------------
     $ git clone https://github.com/thelittlewonder/fbchatviz.git
     $ pip install -r requirements.txt
     $ python plot.py message_1.json
