@@ -12,7 +12,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 #give error if no argument given
 if len(sys.argv) < 2:
+    print(":.:.:.:.:.::.:.:.:.:.:")
     print("Usage: ``%s filename.json``" % sys.argv[0])
+    print(":.:.:.:.:.::.:.:.:.:.:")
     sys.exit(1)
 
 #Read JSON data
@@ -366,6 +368,6 @@ combined_image.paste(type_wise,(50,2590))
 combined_image.save(save_path+'/_Summary_.png',optimize=True)
 combined_image.show()
 #print success message
-print('_.~"~._.~"~._.~"~._.~"~._')
+print(':.:.:.:.:.::.:.:.:.:.:')
 print('Charts saved to Plots/' + sender)
-print('_.~"~._.~"~._.~"~._.~"~._')
+print(':.:.:.:.:.::.:.:.:.:.:')
