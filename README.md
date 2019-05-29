@@ -17,7 +17,8 @@ For other Linux flavors, macOS and Windows, packages are available at
 
 Getting Started
 ------------
-### Getting the Facebook Data 
+### Getting the Facebook Data
+------------
 - Download your Facebook Messaging Data by heading to [settings](https://www.facebook.com/settings?tab=your_facebook_information)
 - Click Download your information.
 ![Download info](https://github.com/thelittlewonder/fbchatviz/raw/master/images/Readme/Readme_1.png)
@@ -35,7 +36,7 @@ Getting Started
 - **message_1.json** is the data file we will be using to plot the charts. Place it in the fbchatviz folder. 
 
 ### Running the Script
-
+------------
     $ git clone https://github.com/thelittlewonder/fbchatviz.git
     $ pip install -r requirements.txt
     $ python plot.py message_1.json
