@@ -26,7 +26,7 @@ receiver = participants_data[1]['name']
 
 #create directory to save plots
 save_path='plots/'+sender
-os.mkdir(save_path)
+os.makedirs(save_path, exist_ok=True)
 
 #declare data elements
 messages_data = chat_data['messages']
@@ -364,6 +364,8 @@ combined_image.paste(time_wise,(50,2034))
 combined_image.paste(type_wise,(50,2590))
 
 combined_image.save(save_path+'/_Summary_.png',optimize=True)
-combined_image.show
+combined_image.show()
 #print success message
+print('_.~"~._.~"~._.~"~._.~"~._')
 print('Charts saved to Plots/' + sender)
+print('_.~"~._.~"~._.~"~._.~"~._')
