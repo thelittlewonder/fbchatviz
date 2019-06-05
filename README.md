@@ -40,6 +40,8 @@ Getting Started
     $ git clone https://github.com/thelittlewonder/fbchatviz.git
     $ pip install -r requirements.txt
     $ python plot.py message_1.json
+
+#### Note: Doesn't Work for Group Conversations yet.
     
 Sample Plot
 ------------
